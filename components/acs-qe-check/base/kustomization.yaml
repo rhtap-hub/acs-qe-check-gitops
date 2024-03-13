@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+commonLabels:         
+  argocd/app-name: acs-qe-check
+  janus-idp.io/tekton: acs-qe-check
+  backstage.io/kubernetes-id: acs-qe-check
+  backstage.io/kubernetes-namespace: oc-ci-e2e 
+  app.kubernetes.io/part-of: acs-qe-check
+resources: 
+- deployment.yaml
+- route.yaml
+- service.yaml
